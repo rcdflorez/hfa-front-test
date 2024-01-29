@@ -1,0 +1,43 @@
+.header{
+  box-shadow: 0px 1px 3px 0px #745a52;;
+  .container-md{
+    max-width: 1150px;
+  }
+  
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  width: 100%;
+  .navbar{
+    min-height: 134px;
+    background-color: var(--main-bg-color);
+    .logo img{
+      width: 270px;
+      @include media-query('small') {
+        width: 318px
+      }
+    }
+    .items{
+      gap: 0 2rem;
+      a{
+        color: var(--white-color);
+        text-align: center;
+        font-size: 18px;
+        &:hover{
+          transition: .15s ease-in all;
+          color: var(--main-bg-color-hover);
+        }
+      }
+    }
+  }
+
+  .btn-hamburger.navbar-toggler{
+    border: none;
+    span.navbar-toggler-icon{
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+  }
+  .btn-hamburger.navbar-toggler:focus{
+    box-shadow: 0px 0px 0px 1px var(--main-bg-color);
+  }
+}

@@ -1,0 +1,125 @@
+.carousel{
+  .carousel-inner, .carousel-item, img{
+    height: 65vh;
+    object-fit: cover;
+    @include media-query('large') {
+      height: 542px;
+    }
+  }
+
+  .carousel-caption{
+    top: calc(50% - 65px);
+    width: 100%;
+    right: inherit;
+    bottom: inherit;
+    left: inherit;
+    @include media-query('small') {
+      top: calc(50% - 48px);
+    }
+    h3{
+      padding: .5rem 1rem;
+      margin: auto;
+      font-weight: 100;
+      font-size: 25px;
+      letter-spacing: 3px;
+
+      @include media-query('large'){
+        max-width: 700px;
+      }
+    }
+    p{
+      font-size: 18px;
+      font-weight: 300;
+      background-color: var(--main-bg-color);
+      max-width: fit-content;
+      margin: auto;
+      margin-top: 1rem;
+      padding: .2rem 2rem;
+      cursor: pointer;
+      @include media-query('large'){
+        max-width: 331px;
+      }
+    }
+  }
+  .caption-1{
+    background-color: var(--main-bg-color);
+    &-year{
+      font-size: 35px;
+      // padding: .5rem;
+    }
+  }
+
+  .carousel-caption-3{
+    top: calc(50% - 164.5px);
+    @include media-query('medium'){
+      width: 45%;
+    }
+    .titan_section{
+      max-width: 331px;
+      margin: auto;
+    }
+    p:last-child{
+      padding: .5rem 1rem;
+    }
+    p{
+      text-align: center;
+      padding: 1rem 2rem;
+      @include media-query(medium){
+        text-align: start;
+        padding: .2rem 0;
+      }
+      &.carousel_subtitle{
+        padding: 0rem 2rem;
+        font-size: 14px;
+        width: fit-content;
+        min-width: 100%;
+        margin: initial;
+        cursor: auto;
+        @include media-query(medium){
+          min-width: inherit;
+          padding-right: 6rem;
+        }
+        span img{
+          width: 200px;
+          object-fit: contain;
+          height: auto;
+          margin-top: 2rem;
+          margin-bottom: 1rem;
+        }
+      }
+      &.carousel_description{
+        margin: 0;
+        padding: 1rem;
+        padding-bottom: 3rem;
+        font-size: 18px;
+        font-weight: 200;
+        @include media-query(medium){
+          background-color: inherit;
+          font-size: 20px;
+          max-width: 280px;
+          padding-left: 0;
+          padding-bottom: 1rem;
+        }
+      }
+    }
+    .titan_title{
+      text-align: center;
+      padding: 0;
+      font-size: 28px;
+      font-weight: 300;
+      background-color: var(--second-bg-color);
+      @include media-query(medium){
+        background-color: inherit;
+        text-align: start;
+        font-size: 40px;
+        font-weight: 200;
+        margin-top: .5rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+.fade.modal-backdrop.show {
+  // opacity: 0.9;
+}

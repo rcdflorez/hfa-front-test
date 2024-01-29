@@ -1,0 +1,60 @@
+.about-us{
+  background-color: var(--second-bg-color);
+  padding: 3rem 0;
+  @include media-query('medium'){
+    padding: 0;
+  }
+  .about-img{
+    img{
+      width: 100%;
+    }
+    @include media-query('medium'){
+      img{
+        width: inherit;
+        max-width: 450px;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    @include media-query('xxlarge'){
+      img{
+        height: 800px;
+        width: 700px;
+        max-width: inherit;
+        object-position: center top;
+      }
+    }
+  }
+  .content{
+    padding: 1rem;
+    color: var(--white-color);
+    @include media-query('medium'){
+      padding: 5rem 0rem;
+      max-width: 850px;
+      margin: auto;
+    }
+    &_about{
+      gap: 2rem;
+      h3{
+        letter-spacing: 3px;
+        font-size: 28px;
+        @include media-query('medium'){
+          max-width: 210px;
+          font-size: 36px;
+          font-weight: 400;
+          letter-spacing: 8px;
+        }
+
+      }
+    }
+    &_videos{
+      gap: 2rem;
+      a{
+        width: 100%;
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
