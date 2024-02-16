@@ -71,11 +71,6 @@ const Titan = () => {
                     alt="Titan logo"
                     className="atl-500-logo"
                   />
-                  <span>PRESENT BY:</span>
-                  <img
-                    src={titan.custom_fields.titan_wipfli_logo}
-                    alt="WIPFLI LOGO"
-                  />
                 </aside>
 
                 <p
