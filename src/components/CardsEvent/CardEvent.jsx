@@ -62,11 +62,17 @@ const CardEvent = ({ event, className }) => {
                 ></iframe>
               ) : (
                 <video
-                  src={event.custom_fields.event_video[0]}
+                  src={event.custom_fields.event_video[0].replace(
+                    "http://",
+                    "https://"
+                  )}
                   controls
                   // width="471"
                   // height="290"
-                  poster={event.custom_fields.event_video_poster[0]}
+                  poster={event.custom_fields.event_video_poster[0].replace(
+                    "http://",
+                    "https://"
+                  )}
                 ></video>
               )}
             </>
