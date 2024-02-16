@@ -79,16 +79,40 @@ const Titan = () => {
                 </aside>
 
                 <p
-                  className="pb-5"
                   dangerouslySetInnerHTML={{
                     __html: textNormalized(
                       titan.custom_fields.titan_description[0]
                     ).p2,
                   }}
                 ></p>
+
+                <aside
+                  className="titan_description_footer_image"
+                  style={{
+                    backgroundImage: `url("${footerImage}")`,
+                  }}
+                >
+                  <p>{titan.custom_fields.titan_footer_text}</p>
+                </aside>
               </div>
             </div>
+            <section className="titan_gallery">
+              <TitanGallery
+                images={titan.custom_fields.titan_gallery_images[0]}
+              />
+            </section>
           </div>
+
+          <section className="titan_about">
+            {aboutSection &&
+              aboutSection.map((about, i) => (
+                <TitanAbout
+                  key={i}
+                  data={about}
+                  className={i % 2 === 0 ? "brown" : "gray"}
+                />
+              ))}
+          </section>
         </>
       )}
     </section>
