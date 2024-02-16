@@ -40,7 +40,13 @@ const CardEvent = ({ event, className }) => {
         <aside className="card-event_image">
           {console.log(event.custom_fields.event_image)}
           {event.custom_fields.event_image ? (
-            <img src={event.custom_fields.event_image} alt="event image" />
+            <img
+              src={event.custom_fields.event_image.replace(
+                "http://",
+                "https://"
+              )}
+              alt="event image"
+            />
           ) : (
             <>
               {event.custom_fields.event_video[0].includes("youtube") ? (
