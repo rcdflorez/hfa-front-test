@@ -25,7 +25,7 @@ function App() {
         <Route path="/team" element={<Team />} />
         <Route path="/events" element={<Events />} />
         <Route path="/titan-100" element={<Titan />} />
-        <Route path="/altlanta-500" element={<Titan500 />} />
+        <Route path="/atlanta-500" element={<Titan500 />} />
         <Route path="/ken-hodges-fundraiser" element={<Foundraising />} />
         <Route path="*" element={<NotFound />} />
       </Route>
