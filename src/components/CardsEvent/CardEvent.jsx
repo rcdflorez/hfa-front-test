@@ -41,7 +41,7 @@ const CardEvent = ({ event, className }) => {
           {console.log(event.custom_fields.event_image)}
           {event.custom_fields.event_image ? (
             <img
-              src={event.custom_fields.event_image.replace(
+              src={event.custom_fields.event_image[0].replace(
                 "http://",
                 "https://"
               )}
