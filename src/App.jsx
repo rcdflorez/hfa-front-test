@@ -12,6 +12,7 @@ import Team from "./pages/Team/Team";
 import Events from "./pages/Events/Events";
 import Titan from "./pages/Titan/Titan";
 import Titan500 from "./pages/Titan-500/Titan";
+import Titan100 from "./pages/Titan-100/Titan";
 import Foundraising from "./pages/ken-hodges-fundraiser/fundraiser";
 // import { useContextGlobal } from './context/global.context'
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/events" element={<Events />} />
         <Route path="/titan-100" element={<Titan />} />
         <Route path="/atlanta-500" element={<Titan500 />} />
+        <Route path="/titan-100-2024" element={<Titan100 />} />
         <Route path="/ken-hodges-fundraiser" element={<Foundraising />} />
         <Route path="*" element={<NotFound />} />
       </Route>

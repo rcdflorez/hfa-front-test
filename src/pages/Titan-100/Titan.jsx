@@ -29,7 +29,7 @@ const Titan = () => {
       })
       .then((json) => {
         const data = json.find((data) =>
-          data.title.rendered.includes("JP James named to Atlanta 500 List")
+          data.title.rendered.includes("2024 GEORGIA TITAN 100")
         );
         const about = json.filter((data) =>
           data.title.rendered.includes("About section")
