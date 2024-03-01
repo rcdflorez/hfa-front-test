@@ -17,7 +17,8 @@ const Footer = () => {
             <div className="contact location">
               <img src={IconLocation} alt="" />
               <p>
-                3340 Peachtree Rd NE Suite 1275 Atlanta, Georgia United States
+                3340 Peachtree Rd NE Suite 1275 <br></br> Atlanta, Georgia
+                United States
               </p>
             </div>
             <div className="contact social">
