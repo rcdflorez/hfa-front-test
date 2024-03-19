@@ -3,8 +3,35 @@ import logo from "../../assets/logo_hive.webp";
 import { Container } from "react-bootstrap";
 import IconLocation from "../../assets/icons/location-dot-solid.svg";
 import IconLinkedId from "../../assets/icons/linkedin.webp";
+import { sendCustomEmail } from "./EmailService";
+
+import React, { useState } from "react";
 
 const Footer = () => {
+  const [details, setDetails] = useState({
+    name: "",
+    message: "",
+    to_email: "",
+  });
+
+  const handleDetailsChange = (event) => {
+    const { name, value } = event.target;
+
+    console.log(name);
+
+    setDetails((prevDetails) => {
+      return {
+        ...prevDetails,
+        [name]: value,
+      };
+    });
+  };
+
+  const handleSendEmail = () => {
+    alert("tales");
+    sendCustomEmail(details);
+  };
+
   return (
     <footer className="footer">
       <Container>
@@ -32,28 +59,39 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <form className="footer_data_form">
+          <div className="footer_data_form">
             <input
-              type="text"
-              name="form-email"
+              type="email"
+              name="to_email"
               id="form-email"
               placeholder="Your email"
+              value={details.to_email}
+              onChange={handleDetailsChange}
             />
             <input
               type="text"
-              name="form-name"
+              name="name"
               id="form-name"
               placeholder="Your name"
+              value={details.name}
+              onChange={handleDetailsChange}
             />
 
             <textarea
-              name="form-message"
+              name="message"
               id="form-message"
               rows="5"
               placeholder="Your message"
+              value={details.message}
+              onChange={handleDetailsChange}
             ></textarea>
-            <button>SEND YOUR MESSAGE</button>
-          </form>
+            <button
+              disabled={!details.to_email || !details.name || !details.message}
+              onClick={handleSendEmail}
+            >
+              SEND YOUR MESSAGE
+            </button>
+          </div>
         </section>
         <p className="footer_copy">
           COPYRIGHT © 2024 HIVE FINANCIAL ASSETS - ALL RIGHTS RESERVED.
