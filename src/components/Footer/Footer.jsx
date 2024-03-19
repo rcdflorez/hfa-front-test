@@ -28,7 +28,7 @@ const Footer = () => {
   };
 
   const handleSendEmail = () => {
-    alert("tales");
+    //alert("tales");
     sendCustomEmail(details);
   };
 
@@ -50,7 +50,7 @@ const Footer = () => {
             </div>
             <div className="contact social">
               <a
-                href="https://www.linkedin.com/company/hive-financial-assets/"
+                href="https://www.linkedin.com/company/hive-financial-assets/about/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
