@@ -32,6 +32,9 @@ const Footer = () => {
     sendCustomEmail(details);
   };
 
+  // Get the current year
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="footer">
       <Container>
@@ -94,7 +97,7 @@ const Footer = () => {
           </div>
         </section>
         <p className="footer_copy">
-          COPYRIGHT © 2024 HIVE FINANCIAL ASSETS - ALL RIGHTS RESERVED.
+          COPYRIGHT © {currentYear} HIVE FINANCIAL ASSETS - ALL RIGHTS RESERVED.
         </p>
       </Container>
     </footer>
