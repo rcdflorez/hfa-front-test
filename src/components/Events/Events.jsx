@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Events = () => {
   return (
-    <section className="events">
+    <section className="events d-none">
       <Container className="d-md-flex justify-content-end">
         <div className="events_content">
           <>
