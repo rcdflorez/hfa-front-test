@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /$
+Disallow: /
+
+# Disallow all subdomains
+Disallow: //*
+
+# Sitemap location
+Sitemap: https://hivefinancialassets.com/sitemap.xml 
