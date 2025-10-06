@@ -51,16 +51,7 @@ const Footer = () => {
                 States
               </p>
             </div>
-            <div className="contact social">
-              <a
-                href="https://www.linkedin.com/company/hive-financial-assets/about/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src={IconLinkedId} alt="" />
-                <p>Hive Financial Assets</p>
-              </a>
-            </div>
+
           </div>
           <div className="footer_data_form">
             <input
