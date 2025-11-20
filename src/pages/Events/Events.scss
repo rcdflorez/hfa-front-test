@@ -9,7 +9,8 @@
     &.gray{
       background-color: #DADADA;
     }
-    article{
+    article,
+    a.card-event{
       max-width: 950px;
       width: 100%;
       // margin: auto;
