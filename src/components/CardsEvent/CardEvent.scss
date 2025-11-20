@@ -6,6 +6,17 @@
     flex-direction: row;
   }
 
+  &--clickable{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+
+    &:hover{
+      opacity: 0.9;
+    }
+  }
+
   &_date{
     p{
       font-size: 36px;

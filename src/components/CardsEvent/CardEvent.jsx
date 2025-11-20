@@ -22,88 +22,91 @@ const CardEvent = ({ event, className }) => {
   const day = event_date.getDate();
   const year = event_date.getFullYear();
 
+  const CardContent = (
+    <>
+      <aside className="card-event_date">
+        <div className="month">
+          <p>{currentMonthName}</p>
+        </div>
+        <div className="day">
+          <p>{day}</p>
+        </div>
+        <div className="year">
+          <p>{year}</p>
+        </div>
+      </aside>
+
+      <aside className="card-event_image">
+        {console.log(event.custom_fields.event_image)}
+        {event.custom_fields.event_image ? (
+          <img
+            src={event.custom_fields.event_image[0].replace(
+              "http://",
+              "https://"
+            )}
+            alt="event image"
+          />
+        ) : (
+          <>
+            {event.custom_fields.event_video[0].includes("youtube") ? (
+              <iframe
+                src={event.custom_fields.event_video[0].replace(
+                  "watch?v=",
+                  "embed/"
+                )}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            ) : (
+              <video
+                src={event.custom_fields.event_video[0].replace(
+                  "http://",
+                  "https://"
+                )}
+                controls
+                // width="471"
+                // height="290"
+                poster={event.custom_fields.event_video_poster[0].replace(
+                  "http://",
+                  "https://"
+                )}
+              ></video>
+            )}
+          </>
+        )}
+      </aside>
+
+      <aside className="card-event_data">
+        <div className="data-header">
+          <p className="data-header_title">{event.title.rendered}</p>
+          <p
+            className="data-header_subtitle"
+            dangerouslySetInnerHTML={{ __html: event.excerpt.rendered }}
+          ></p>
+        </div>
+        <div className="data-content">
+          <p>{event.custom_fields.event_description}</p>
+        </div>
+      </aside>
+    </>
+  );
+
   return (
     <div className={"container-events " + className}>
-      <article className="card-event">
-        <aside className="card-event_date">
-          <div className="month">
-            <p>{currentMonthName}</p>
-          </div>
-          <div className="day">
-            <p>{day}</p>
-          </div>
-          <div className="year">
-            <p>{year}</p>
-          </div>
-        </aside>
-
-        <aside className="card-event_image">
-          {console.log(event.custom_fields.event_image)}
-          {event.custom_fields.event_image ? (
-            <img
-              src={event.custom_fields.event_image[0].replace(
-                "http://",
-                "https://"
-              )}
-              alt="event image"
-            />
-          ) : (
-            <>
-              {event.custom_fields.event_video[0].includes("youtube") ? (
-                <iframe
-                  src={event.custom_fields.event_video[0].replace(
-                    "watch?v=",
-                    "embed/"
-                  )}
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
-              ) : (
-                <video
-                  src={event.custom_fields.event_video[0].replace(
-                    "http://",
-                    "https://"
-                  )}
-                  controls
-                  // width="471"
-                  // height="290"
-                  poster={event.custom_fields.event_video_poster[0].replace(
-                    "http://",
-                    "https://"
-                  )}
-                ></video>
-              )}
-            </>
-          )}
-        </aside>
-
-        <aside className="card-event_data">
-          <div className="data-header">
-            <>
-              {event.custom_fields.event_url ? (
-                <p className="data-header_title">
-                  <a href={event.custom_fields.event_url}>
-                    {" "}
-                    {event.title.rendered}{" "}
-                  </a>
-                </p>
-              ) : (
-                <p className="data-header_title">{event.title.rendered}</p>
-              )}
-            </>
-
-            <p
-              className="data-header_subtitle"
-              dangerouslySetInnerHTML={{ __html: event.excerpt.rendered }}
-            ></p>
-          </div>
-          <div className="data-content">
-            <p>{event.custom_fields.event_description}</p>
-          </div>
-        </aside>
-      </article>
+      {event.custom_fields.event_url ? (
+        <a 
+          href={event.custom_fields.event_url} 
+          className="card-event card-event--clickable"
+        >
+          {CardContent}
+        </a>
+      ) : (
+        <article className="card-event">
+          {CardContent}
+        </article>
+      )}
     </div>
   );
 };
